@@ -84,6 +84,15 @@ img {
     gap: 1rem;
 }
 
+@media (min-width: 1280px) {
+    .navegacion a {
+        color: var(--blanco); 
+    }
+}
+
+
+
+
 @media (min-width: 768px) {
     .navegacion {
         display: initial;
@@ -235,14 +244,19 @@ img {
 
 @media (min-width: 1280px) {
     .container {
-        width: 90rem;
-        max-width: 90%;
+        max-width: 120rem;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .whatIs{
+        margin-top: 20rem;
     }
 }
 
 .card {
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
     padding: 2rem;
-    border: 1px solid var(--primario);
     margin: 2rem;
 }
 
@@ -255,4 +269,221 @@ img {
     .card__title h3{
     font-size: 4rem;
 }
+}
+
+/* Efecto */
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* Seguridad */
+
+.seguridad {
+    background-color: var(--primario);
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    padding: 6.5rem;
+    position:relative;
+    overflow: hidden;
+}
+
+.seguridad::before, .seguridad::after{
+    background-color: var(--blanco);
+    content: "";
+    height: 15rem;
+    width: 120%;
+    position: absolute;
+}
+
+.seguridad::before {
+    position: absolute;
+    /*La cantidad del top debe ser la misma del margin, así tapa el margen y conserva el efecto*/
+    top: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+
+.seguridad::after{
+    position: absolute;
+    transform: rotate(3deg);
+    bottom: -10rem;
+    right: 0;
+}
+
+.seguridad__container{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.seguridad__grid {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.seguridad__heading {
+    color: var(--blanco);
+    text-align: center;
+}
+
+.seguridad__img {
+    width: 30rem;
+    margin: 0 auto;
+}
+/* Ojo, hay mucho código duplicado en las cards, sería mejor una  única clase card con el boxshadow y el efecto, o sino usar [class$=""]*/
+.card2 {
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    padding: 2rem;
+    margin: 2rem;
+    transition: transform .3s ease;
+}
+
+.card2:hover {
+    transform: scale(1.1);
+}
+
+/* Comisiones */
+
+.comisiones__heading {
+    text-align: center;
+}
+
+.comisiones__img {
+    width: 25rem;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.comisiones__card{
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    padding: 2rem;
+    margin: 2rem;
+    transition: transform .3s ease;
+}
+
+.comisiones__card:hover{
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .comisiones__grid {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 1fr;
+    }
+
+    .comisiones__contenido{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .comisiones__img{
+        grid-column: 2/3;
+        margin-top: 20rem;
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .comisiones__img{
+        margin-top: 0;
+    }
+}
+
+/* Testimoniales */
+
+.testimoniales {
+    background-color: var(--primario);
+    padding-bottom: 2rem;
+}
+
+.testimoniales__heading {
+    text-align: center;
+    color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .testimoniales__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+.testimonial {
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    padding: 2rem;
+    margin: 2rem;
+    transition: transform .3s ease;
+    background-color: var(--blanco);
+    position: relative;
+}
+
+.testimonial:hover {
+    transform: scale(1.1);
+}
+
+.testimonial__texto::before {
+    content: "";
+    background-image: url(../img/comilla.png);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.testimonial__texto {
+    padding-left: 2rem;
+}
+
+.testimonial__autor {
+    text-align: right;
+    color: var(--primario);
+    font-weight: 700;
+}
+
+/* Footer */ 
+
+.footer {
+    background-color: #5A30A0;
+}
+
+.footer__contenido{
+    color: var(--blanco);
+}
+
+.footer__nucleus{
+    font-weight: 900;
+    text-align: center;
+}
+
+.footer__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__nav a {
+    color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .footer__contenido {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer__nav {
+        flex-direction: row;
+    }
 }
